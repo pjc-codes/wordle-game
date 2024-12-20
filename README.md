@@ -1,12 +1,18 @@
-# wordle-game
-
-Python code for NYT wordle game.
-
-The objective is to guess the correct 5-letter word using upto 6 guesses.
+# WORDLE 
 
 
-Red color indicates that the letter is not in the solution.
+The objective of *Wordle* is to guess a hidden five-letter word within six attempts. After each guess, the letters are color-coded:
+- <span style="color: green;">green</span> for correct letters in the right position,
+-  <span style="color: orange;">yellow</span> for correct letters in the wrong position
+-  <span style="color: red;">red</span> for incorrect letters. 
+  
+The goal is to figure out the word by using these clues, with only one word to guess each day. 
 
-Green color indicates that the letter is in its correct position.
+**wordle.py** - my python program for NYT's wordle game.
 
-Yellow color indicates that the letter is in the solution but it is not in the correct position.
+I have also coded the option to play in **hard** mode or **easy** mode.
+
+1. **Easy Mode**: In this mode, players have no restrictions on the guesses they can make.
+
+2. **Hard Mode**: In this mode, after any guess, if you have a letter in the correct position, you must include that letter in the same position the next guess. Additionally, any other revealed letters (even those not in the correct positions) must also be included in the next guess.
+

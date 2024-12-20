@@ -24,7 +24,7 @@ def wordle_board(guess_list: list[str] = [], guess_num: int = 0, result_list: li
         print(f"__|__|__|__|__")
 
 
-def get_guess_easy(guess_list: list, word_list: list):
+def get_guess_easy(guess_list: list[str], word_list: list[str], result_list: list[list[int]], word):
     while True:
         try:
             guess = input("Enter your guess : ")
@@ -33,6 +33,8 @@ def get_guess_easy(guess_list: list, word_list: list):
                     print("You've already guessed that word.")
                     raise ValueError
                 guess_list.append(guess.upper())
+                result = check_guess(guess_list[-1], word)
+                result_list.append(result)
                 break
             else:
                 raise ValueError
@@ -114,9 +116,7 @@ def wordle():
         if hard_mode == 'Y':
             get_guess_hard(guess_list, word_list, result_list, word)
         else:
-            get_guess_easy(guess_list, word_list)
-            result = check_guess(guess_list[-1], word)
-            result_list.append(result)
+            get_guess_easy(guess_list, word_list, result_list, word)
 
         sleep(0.2)
         os.system('clear')
