@@ -20,7 +20,8 @@ def wordle_board(guess_list: list[str] = [], guess_num: int = 0, result_list: li
         print()
 
     for i in range(6-guess_num):
-        print(f"  |  |  |  |  ")
+        # print(f"  |  |  |  |  ")
+        print(f"__|__|__|__|__")
 
 
 def get_guess_easy(guess_list: list, word_list: list):
